@@ -6,7 +6,7 @@ export function StatCard({
   color,
 }: {
   title: string;
-  value: string;
+  value: string | number;
   icon: React.ReactNode;
   change: string;
   color: string;
