@@ -19,7 +19,7 @@ export const fetchTransaction = async (page = 1, limit = 10, search = "") => {
 
 export const fetchTransactionById = async (id: number) => {
     try {
-        const res = await api.get(`/transaction?${id}`,{
+        const res = await api.get(`/transaction/${id}`,{
             headers: getTokenHeader(),
         });
 
@@ -109,6 +109,6 @@ export const fetchTotalExpenseStat = async () => {
 
         return res.data;
     } catch (error) {
-        handleApiError(error, "Failed to fetch Today Expense Stats")
+        handleApiError(error, "Failed to fetch Today Expense ")
     }
 }

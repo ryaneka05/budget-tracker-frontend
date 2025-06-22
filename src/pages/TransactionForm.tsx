@@ -31,6 +31,16 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
     }
 
     useEffect(() => {
+        if(initialData) {
+            setForm({
+                ...initialData,
+                categoryId: String(initialData.categoryId),
+                amount: String(initialData.amount)
+            })
+        }
+    }, []);
+
+    useEffect(() => {
         loadCategories();
     }, []);
 
@@ -70,6 +80,7 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
             <div>
                 <label htmlFor="tipe" className="block mb-1 text-sm">Tipe</label>
                 <select 
+                    id="tipe"
                     name="type"
                     value={form.type}
                     onChange={handleChage}
@@ -81,8 +92,9 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
             </div>
 
             <div>
-                <label htmlFor="Jumlah" className="block mb-1 text-sm">Jumlah</label>
+                <label htmlFor="jumlah" className="block mb-1 text-sm">Jumlah</label>
                 <input 
+                    id="jumlah"
                     type="text"
                     name="amount"
                     value={form.amount}
@@ -96,6 +108,7 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
             <div>
                 <label htmlFor="tanggal" className="block mb-1 text-sm">Tanggal</label>
                 <input 
+                    id="tanggal"
                     type="date"
                     name="date"
                     value={form.date}
@@ -109,6 +122,7 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
             <div>
                 <label htmlFor="catatan" className="block mb-1 text-sm">Catatan</label>
                 <input 
+                    id="catatan"
                     type="text"
                     name="note"
                     value={form.note}
@@ -122,6 +136,7 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
             <div>
                 <label htmlFor="category" className="block mb-1 text-sm">Kategori</label>
                 <select 
+                    id="category"
                     name="categoryId"
                     value={form.categoryId}
                     onChange={handleChage}

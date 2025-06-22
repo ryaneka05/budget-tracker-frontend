@@ -87,6 +87,7 @@ const AuthPage = () => {
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
                         <input 
+                            id="name"
                             type="text"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value})}
@@ -95,12 +96,13 @@ const AuthPage = () => {
                         />
                     </div>
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <label htmlFor="phonNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center justify-center pl-3 pt-1 text-gray-500 text-sm">
                                 +62
                             </div>
                             <input 
+                                id="phonNumber"
                                 type="text"
                                 value={formData.number}
                                 onChange={(e) => setFormData({ ...formData, number: e.target.value})}
@@ -115,6 +117,7 @@ const AuthPage = () => {
             <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                 <input 
+                    id="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value})}
@@ -127,6 +130,7 @@ const AuthPage = () => {
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                 <div className="relative">
                     <input 
+                        id="password"
                         type={showPassword ? "text" : "password"}
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value})}
