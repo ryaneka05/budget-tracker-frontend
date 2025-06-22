@@ -51,11 +51,8 @@ export default function TransactionPage() {
     }, [page, search, limit]);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log("handleSearch")
-        console.log(e.target.value);
         setSearch(e.target.value);
-        console.log(setSearch);
-        //setPage(1);
+        setPage(1);
     };
 
     const handleDelete = async (id: number) => {
