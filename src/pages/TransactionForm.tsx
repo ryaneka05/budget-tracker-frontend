@@ -128,7 +128,7 @@ const TransactionForm: React.FC<TransaksiProps> = ({initialData, onSubmit}) => {
                     value={form.note}
                     onChange={handleChage}
                     className="w-full border px-3 py-2 rounded"
-                    placeholder="Catatan"
+                    placeholder="Masukan Catatan..."
                     required
                 />
             </div>
